@@ -15,10 +15,12 @@ export function useStockData() {
     fetcher
   );
 
-  const chartData = data
+  const sortedData = data?.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  
+  const chartData = sortedData
     ? {
-        categories: data.map((item) => fRelative(item.date) || DEFAULT_CATEGORY),
-        series: [{ name: DEFAULT_SERIES_NAME, data: data.map((item) => item.close) }],
+        categories: sortedData.map((item) => fRelative(item.date) || DEFAULT_CATEGORY),
+        series: [{ name: DEFAULT_SERIES_NAME, data: sortedData.map((item) => item.close) }],
       }
     : { categories: [], series: [{ name: DEFAULT_SERIES_NAME, data: [] }] };
 

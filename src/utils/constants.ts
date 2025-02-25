@@ -8,4 +8,3 @@ export const API_ENDPOINT =
     : '/api/stock-data';
 
 export const CLIENT_ID = import.meta.env.VITE_WORKOS_CLIENT_ID || '';
-export const API_KEY = import.meta.env.VITE_WORKOS_API_KEY || '';

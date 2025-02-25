@@ -12,7 +12,7 @@ import { ThemeProvider } from 'src/theme/theme-provider';
 
 import { Iconify } from 'src/components/iconify';
 
-import { API_KEY, CLIENT_ID } from './utils/constants';
+import { CLIENT_ID } from './utils/constants';
 
 // ----------------------------------------------------------------------
 

@@ -1,6 +1,7 @@
 import type { IconButtonProps } from '@mui/material/IconButton';
 
 import { useState, useCallback } from 'react';
+import { useAuth } from '@workos-inc/authkit-react';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,7 +16,6 @@ import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
 import { useRouter, usePathname } from 'src/routes/hooks';
 
 import { _myAccount } from 'src/_mock';
-import { useAuth } from '@workos-inc/authkit-react';
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +30,9 @@ export type AccountPopoverProps = IconButtonProps & {
 
 export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps) {
   const router = useRouter();
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+  
+  const userName = `${user?.firstName && user?.lastName ? `${user?.firstName} ${user?.lastName}` : _myAccount.displayName}`;
 
   const pathname = usePathname();
 
@@ -66,8 +68,8 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
         }}
         {...other}
       >
-        <Avatar src={_myAccount.photoURL} alt={_myAccount.displayName} sx={{ width: 1, height: 1 }}>
-          {_myAccount.displayName.charAt(0).toUpperCase()}
+        <Avatar src={_myAccount.photoURL} alt={userName} sx={{ width: 1, height: 1 }}>
+          {userName.charAt(0).toUpperCase()}
         </Avatar>
       </IconButton>
 
@@ -85,11 +87,11 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
       >
         <Box sx={{ p: 2, pb: 1.5 }}>
           <Typography variant="subtitle2" noWrap>
-            {_myAccount?.displayName}
+            {userName}
           </Typography>
 
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {_myAccount?.email}
+            {user?.email ? user?.email : _myAccount?.email}
           </Typography>
         </Box>
 

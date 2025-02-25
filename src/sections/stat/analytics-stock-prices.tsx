@@ -46,7 +46,7 @@ export function AnalyticsStockPrices({ title, subheader, chart, ...other }: Prop
     },
     tooltip: {
       y: {
-        formatter: (value: number) => `${value} USD`,
+        formatter: (value: number) => `$${value} USD`,
       },
     },
     ...chart.options,

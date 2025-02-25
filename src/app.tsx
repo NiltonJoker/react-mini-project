@@ -1,5 +1,7 @@
 import 'src/global.css';
 
+import { AuthKitProvider } from '@workos-inc/authkit-react';
+
 import Fab from '@mui/material/Fab';
 
 import { Router } from 'src/routes/sections';
@@ -9,6 +11,8 @@ import { useScrollToTop } from 'src/hooks/use-scroll-to-top';
 import { ThemeProvider } from 'src/theme/theme-provider';
 
 import { Iconify } from 'src/components/iconify';
+
+import { API_KEY, CLIENT_ID } from './utils/constants';
 
 // ----------------------------------------------------------------------
 
@@ -37,8 +41,12 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <Router />
-      {githubButton}
+      <AuthKitProvider clientId={CLIENT_ID} devMode>
+        <>
+          <Router />
+          {githubButton}
+        </>
+      </AuthKitProvider>
     </ThemeProvider>
   );
 }

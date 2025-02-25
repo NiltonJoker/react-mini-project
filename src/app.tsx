@@ -41,7 +41,7 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <AuthKitProvider clientId={CLIENT_ID} devMode>
+      <AuthKitProvider clientId={CLIENT_ID} >
         <>
           <Router />
           {githubButton}

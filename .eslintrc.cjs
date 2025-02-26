@@ -62,6 +62,24 @@ module.exports = {
       0,
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
+    // testing
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.ts',
+          '**/*.test.tsx',
+          '**/*.spec.ts',
+          '**/*.spec.tsx',
+          '**/*.stories.tsx',
+          '**/*.stories.ts',
+          '**/*.config.js',
+          '**/*.config.ts',
+          '**/*.config.tsx',
+          "**/setupTests.ts"
+        ],
+      },
+    ],
     // perfectionist
     'perfectionist/sort-exports': [1, { order: 'asc', type: 'line-length' }],
     'perfectionist/sort-named-imports': [1, { order: 'asc', type: 'line-length' }],

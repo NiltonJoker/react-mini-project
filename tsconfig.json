@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": false,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vitest","vitest/globals", "vitest/jsdom"],
   },
   "include": ["src","api"],
   "exclude": ["node_modules"],

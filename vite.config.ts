@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import path from 'path';
 import checker from 'vite-plugin-checker';
 import { defineConfig } from 'vite';
@@ -36,4 +37,9 @@ export default defineConfig({
   },
   server: { port: PORT, host: true },
   preview: { port: PORT, host: true },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setupTests.ts'
+  }
 });

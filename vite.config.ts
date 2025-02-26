@@ -37,9 +37,12 @@ export default defineConfig({
   },
   server: { port: PORT, host: true },
   preview: { port: PORT, host: true },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/test/setupTests.ts'
-  }
+    setupFiles: './src/test/setupTests.ts',
+  },
 });

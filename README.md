@@ -1,48 +1,65 @@
-## Minimal UI ([Free version](https://free.minimals.cc/))
+# **React Mini Project**  
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+This project is based on the **Minimal Free - React Admin Dashboard** template. It includes authentication using **WorkOS AuthKit**, a new page with a stock price chart, and additional improvements.  
 
-![preview](public/assets/images/minimal-free-preview.jpg)
+## 🚀 **Live Demo**  
+🔗 https://appl-stock-prices.vercel.app
 
-> Free React Admin Dashboard made with Material-UI components and React + Vite.js.
+## 📂 **Project Setup**  
 
-## Pages
+Follow these steps to set up the project locally:  
 
-- [Dashboard](https://free.minimals.cc/)
-- [Users](https://free.minimals.cc/user)
-- [Products](https://free.minimals.cc/products)
-- [Blog](https://free.minimals.cc/blog)
-- [Sign in](https://free.minimals.cc/sign-in)
-- [Not found](https://free.minimals.cc/404)
+1. **Clone the repository:**  
+   ```bash
+   git clone https://github.com/NiltonJoker/react-mini-project.git
+   cd react-mini-project
+   ```  
+2. **Install dependencies:**  
+   ```bash
+   npm install
+   ```  
+3. **Run the project:**  
+   ```bash
+   npm run dev
+   ```  
+4. **Open in the browser:**  
+   The project will be available at `http://localhost:3039/` (or another port if specified).  
 
-## Quick start
+## 🔐 **Authentication with WorkOS AuthKit**  
 
-- Clone the repo: `git clone https://github.com/minimal-ui-kit/material-kit-react.git`
-- Recommended: `Node.js v20.x`
-- **Install:** `npm i` or `yarn install`
-- **Start:** `npm run dev` or `yarn dev`
-- **Build:** `npm run build` or `yarn build`
-- Open browser: `http://localhost:3039`
+The Sign-In screen has been modified to support **username and password authentication** using WorkOS AuthKit.  
 
-## Upgrade to PRO Version
+### **Setup Instructions:**  
+- Ensure you have a **WorkOS sandbox account** configured.  
+- Update the environment variables with your WorkOS credentials.  
+- Add the following environment variable in a `.env` file:
+  ```
+  VITE_WORKOS_CLIENT_ID=your_workos_client_id
+  ```
 
-| Minimal Free                | [Minimal Pro](https://material-ui.com/store/items/minimal-dashboard/)                                   |
-| :-------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **6** Pages                 | **70+** Pages                                                                                           |
-| **Partial** theme customize | **Fully** theme customize                                                                               |
-| -                           | **Next.js** version                                                                                     |
-| -                           | **TypeScript** version (Standard Plus and Extended license)                                             |
-| -                           | Design **Figma** file (Standard Plus and Extended license)                                              |
-| -                           | Authentication with **Amplify**, **Auth0**, **JWT**, **Firebase** and **Supabase**                      |
-| -                           | Light/dark mode, right-to-left, form validation... ([+more components](https://minimals.cc/components)) |
-| -                           | Complete users flows                                                                                    |
-| -                           | 1 year of free updates / 6 months of technical support                                                  |
-| -                           | Learn more: [Package & license](https://docs.minimals.cc/package)                                       |
+## 📊 **Stock Price Chart Implementation**  
 
-## License
+A new page has been added to the dashboard that displays **AAPL (Apple) end-of-day stock prices** for the past 12 months. The data is fetched dynamically from an API deployed on **Vercel**.  
 
-Distributed under the [MIT](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) license.
+### **Chart Features:**  
+✅ Displays stock prices for the last 12 months.  
+✅ Includes a **filter** to switch between the last **3, 6, or 12 months**.  
 
-## Contact us
+## 🛠️ **Improvements & Additional Features**  
 
-Email: support@minimals.cc
+In addition to the required modifications, the project includes:  
+
+- ✅ **Stock Chart Filter** – Users can filter stock price data for the last **3, 6, or 12 months**, improving data visualization.  
+- ✅ **Unit Tests for Custom Hook** – A custom hook was created to handle **SWR data fetching**, with **unit tests** ensuring its reliability.  
+
+## 📝 **Tests**  
+
+The project includes tests for the custom data-fetching hook. To run the tests, use:  
+
+```bash
+npm run test
+```  
+
+## 🚀 **Deployment**  
+
+The project is deployed using **Vercel**.
